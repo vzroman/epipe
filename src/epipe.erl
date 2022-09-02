@@ -9,7 +9,7 @@
 ]).
 
 do([Fun|Rest],Acc0)->
-  case try Fun(Acc0) catch _:E:S->{error,{E,S}} end of
+  case try Fun(Acc0) catch _:E->{error,E} end of
     {ok,Acc}->do(Rest,Acc);
     ok->do(Rest,Acc0);
     error->{error,undefined};
