@@ -23,7 +23,8 @@ API
     
     Fun1, Fun2, ... is a function with arity = 1
     Input is an erlang term which will be passed as an argument for Fun1
-    Ouput is a result of the last Fun in the list
+    Ouput is a result of the last Fun in the list. ATTENTION! If a Fun returns just ok, 
+            then it's Input is passed as an Input for the following Fun (side effects only functions)
     Error is error :-)
 
 BUILD
