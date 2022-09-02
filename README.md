@@ -8,12 +8,16 @@ I appreciate any pull requests for bug fixing, tests or extending the functional
 
 API
 -----
-    Sometimes you need to do several transformations on some Accumulator in a raw, and the result of the previous
-    transformation shuold go as the input for the next transformation. If some transformation in the list crashes or
-    returns a error, the whole result of the group transformation bacomes the error. If all transformations are 
-    successfull then the result of the final transformation in the list is the result of the whole transformation.
-    This pattern is called 'pipe' and nativily supported in some languages. If you find usefull this pattern for
-    your Erlang application try use this library. It's really simple, example:
+    Sometimes you need to do several transformations on some Input in a raw, 
+    and the result of the previous transformation shuold go as the input for 
+    the next transformation and so on. If some transformation in the list crashes or 
+    returns a error, the whole result of the group transformation turns the error. 
+    If all transformations are successfull then the result of the final transformation 
+    in the list is the result of the whole transformation.
+
+    This pattern is called 'pipe' and nativily supported in some languages. If you 
+    find usefull this pattern for your Erlang application try use this library. 
+    It's really simple, example:
 
         {ok, Output} | {error, Error} = epipe:do([Fun1, Fun2 ... ], Input)
     
